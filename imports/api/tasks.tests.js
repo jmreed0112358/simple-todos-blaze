@@ -18,7 +18,7 @@ if (Meteor.isServer) {
           text: 'Test Test Test',
           createdAt: new Date(),
           owner: userId,
-          username: 'tmeaday'
+          username: 'foo-bar'
         });
       });
 
