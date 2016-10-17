@@ -7,12 +7,12 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import { Tasks } from './tasks.js';
 
 if (Meteor.isServer) {
-  describe('Tasks', () => {
-    describe('methods', () => {
+  describe('Tasks', function () {
+    describe('methods', function () {
       const userId = Random.id();
       let taskId;
 
-      beforeEach(() => {
+      beforeEach(function () {
         Tasks.remove({});
         taskId = Tasks.insert({
           text: 'Test Test Test',
@@ -22,7 +22,7 @@ if (Meteor.isServer) {
         });
       });
 
-      it('can delete owned task', () => {
+      it('can delete owned task', function () {
         const deleteTask = Meteor.server.method_handlers['tasks.remove'];
         const invocation = { userId };
         deleteTask.apply(invocation, [taskId]);
